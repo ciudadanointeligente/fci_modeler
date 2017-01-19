@@ -1,0 +1,1 @@
+json.array! @fci_models, partial: 'fci_models/fci_model', as: :fci_model

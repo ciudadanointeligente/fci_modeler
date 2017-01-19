@@ -1,0 +1,2 @@
+class FciModel < ApplicationRecord
+end

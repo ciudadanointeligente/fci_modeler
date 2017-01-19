@@ -1,0 +1,1 @@
+json.partial! "fci_models/fci_model", fci_model: @fci_model

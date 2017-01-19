@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fci Models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fci_models.each do |fci_model| %>
+      <tr>
+        <td><%= link_to 'Show', fci_model %></td>
+        <td><%= link_to 'Edit', edit_fci_model_path(fci_model) %></td>
+        <td><%= link_to 'Destroy', fci_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fci Model', new_fci_model_path %>
