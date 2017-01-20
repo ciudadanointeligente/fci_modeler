@@ -1,0 +1,2 @@
+class FciRelation < ApplicationRecord
+end

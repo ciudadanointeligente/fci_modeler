@@ -11,4 +11,9 @@ RSpec.describe FciAttribute, type: :model do
   it "must have a type" do
     expect(fci_attribute.fci_type).to be_valid
   end
+
+  it "is not valid wuitout a name" do
+    fci_attribute.name = nil
+    expect(fci_attribute).not_to be_valid
+  end
 end

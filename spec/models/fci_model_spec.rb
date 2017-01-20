@@ -14,5 +14,14 @@ RSpec.describe FciModel, type: :model do
     expect(fci_model.fci_attributes.count).to eq 1
   end
 
-  
+  it "not valid without a name" do
+    fci_model.name = nil
+    expect(fci_model).not_to be_valid
+  end
+
+  # it 'can have fci_relations' do
+  #   fci_relation = FactoryGirl.create(:fci_relation)
+  #   fci_model.fci_relations << fci_relation
+  #   expect(fci_model.fci_relations.count).to eq 1
+  # end
 end

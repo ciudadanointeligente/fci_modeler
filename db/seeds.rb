@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+FciType.first_or_create([
+  {description:'Numero Entero',real_type:'Integer'},
+  {description:'Cadena de texto',real_type:'String'},
+  {description:'Numero Decimal',real_type:'Float'},
+  {description:'Booleano',real_type:'Boolean'},
+  {description:'Fecha',real_type:'Date'}
+])
