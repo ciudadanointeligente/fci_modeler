@@ -97,3 +97,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+# Automigrate if needs migration
+if ActiveRecord::Migrator.needs_migration?
+  ActiveRecord::Migrator.migrate(File.join(Rails.root, 'db/migrate'))
+end
