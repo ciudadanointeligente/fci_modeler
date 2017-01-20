@@ -10,18 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119140007) do
+ActiveRecord::Schema.define(version: 20170120000051) do
 
   create_table "fci_attributes", force: :cascade do |t|
     t.integer  "fci_model_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "fci_type_id"
     t.index ["fci_model_id"], name: "index_fci_attributes_on_fci_model_id"
+    t.index ["fci_type_id"], name: "index_fci_attributes_on_fci_type_id"
   end
 
   create_table "fci_models", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fci_types", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+    t.string   "real_type"
   end
 
 end
