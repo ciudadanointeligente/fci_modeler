@@ -2,5 +2,5 @@ language: ruby
 rvm:
     - 2.4.0
 before_script:
-  - RAILS_ENV=test rails db:migrations
-  - bundle exec rake db:test:prepare
+  - RAILS_ENV=test rake db:migrations
+  - RAILS_ENV=test rake db:test:prepare
