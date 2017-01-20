@@ -1,3 +1,5 @@
 language: ruby
 rvm:
     - 2.4.0-rc1
+before_script:
+    - rake db:migrate && rake db:test:prepare
