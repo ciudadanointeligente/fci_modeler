@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120152107) do
+ActiveRecord::Schema.define(version: 20170122171125) do
 
   create_table "fci_attributes", force: :cascade do |t|
     t.integer  "fci_model_id"
@@ -28,9 +28,22 @@ ActiveRecord::Schema.define(version: 20170120152107) do
     t.string   "name"
   end
 
+  create_table "fci_relation_types", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+    t.string   "real_type"
+  end
+
   create_table "fci_relations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "base_model_id"
+    t.integer  "related_model_id"
+    t.integer  "fci_relation_type_id"
+    t.index ["base_model_id"], name: "index_fci_relations_on_base_model_id"
+    t.index ["fci_relation_type_id"], name: "index_fci_relations_on_fci_relation_type_id"
+    t.index ["related_model_id"], name: "index_fci_relations_on_related_model_id"
   end
 
   create_table "fci_types", force: :cascade do |t|

@@ -12,3 +12,9 @@ FciType.first_or_create([
   {description:'Booleano',real_type:'Boolean'},
   {description:'Fecha',real_type:'Date'}
 ])
+FciRelationType.first_or_create([
+  {description:'Pertenece a',real_type:'belongs_to'},
+  {description:'Tiene uno',real_type:'has_many'},
+  {description:'Tiene muchos',real_type:'has_one'},
+  {description:'Tiene y pertenece a muchos',real_type:'has_and_belongs_to_many'}
+])
