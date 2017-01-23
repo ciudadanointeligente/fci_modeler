@@ -12,8 +12,13 @@ RSpec.describe FciAttribute, type: :model do
     expect(fci_attribute.fci_type).to be_valid
   end
 
-  it "is not valid wuitout a name" do
+  it "is not valid without a name" do
     fci_attribute.name = nil
+    expect(fci_attribute).not_to be_valid
+  end
+
+  it "is not valid without a boolean field called mandatory" do
+    fci_attribute.mandatory = nil
     expect(fci_attribute).not_to be_valid
   end
 end
